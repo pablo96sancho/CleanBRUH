@@ -14,8 +14,8 @@
 </p>
 
 <p align="left">
-  <a href="https://github.com/pablo96sancho/CleanBRUH/releases/latest" style="display:inline-block; padding: 12px 18px; background: #1f6feb; color: white; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; border: 1px solid rgba(255,255,255,0.12);">
-    ⬇️ Descargar DMG v1.0
+  <a href="https://github.com/pablo96sancho/CleanBRUH/releases/tag/v1.1" style="display:inline-block; padding: 12px 18px; background: #1f6feb; color: white; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 16px; border: 1px solid rgba(255,255,255,0.12);">
+    ⬇️ Descargar DMG v1.1
   </a>
 </p>
 
