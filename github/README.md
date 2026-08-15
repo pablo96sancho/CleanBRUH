@@ -18,7 +18,9 @@ Mantén tu Mac protegido mientras limpias, reparas o trabajas sin que el teclado
 
 ## 📸 Vista previa
 
-La app se ejecuta desde la barra de menú y activa una sobreimpresión oscura en todas las pantallas para dejar claro que el sistema está temporalmente bloqueado.
+<p align="center">
+  <img src="cover.jpg" alt="CleanBRUH preview" width="900" />
+</p>
 
 ## 📦 Instalación
 
