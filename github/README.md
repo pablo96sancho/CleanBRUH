@@ -19,7 +19,7 @@ Mantén tu Mac protegido mientras limpias, reparas o trabajas sin que el teclado
 ## 📸 Vista previa
 
 <p align="center">
-  <img src="cover.jpg" alt="CleanBRUH preview" width="900" />
+  <img src="https://raw.githubusercontent.com/pablo96sancho/CleanBRUH/main/github/cover.jpg" alt="CleanBRUH preview" width="900" style="border-radius: 16px; border: 1px solid rgba(148,163,184,0.2);" />
 </p>
 
 ## 📦 Instalación
