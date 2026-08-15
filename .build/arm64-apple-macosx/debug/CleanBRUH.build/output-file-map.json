@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/primary.swiftdeps"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/AppDelegate.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.dia"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/Core/InputBlocker.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.dia"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/LockOverlayView.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.dia"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/MenuBarManager.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.dia"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/OverlayWindowController.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.dia"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/main.swift": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.dia"
+  }
+}

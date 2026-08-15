@@ -1,0 +1,146 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "CleanBRUH-arm64-apple-macosx-debug.exe": ["<CleanBRUH-arm64-apple-macosx-debug.exe>"]
+  "CleanBRUH-arm64-apple-macosx-debug.module": ["<CleanBRUH-arm64-apple-macosx-debug.module>"]
+  "CleanBRUHPackageTests-arm64-apple-macosx-debug.module": ["<CleanBRUHPackageTests-arm64-apple-macosx-debug.module>"]
+  "CleanBRUHPackageTests-arm64-apple-macosx-debug.test": ["<CleanBRUHPackageTests-arm64-apple-macosx-debug.test>"]
+  "CleanBRUHTests-arm64-apple-macosx-debug.module": ["<CleanBRUHTests-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<CleanBRUH-arm64-apple-macosx-debug.exe>","<CleanBRUH-arm64-apple-macosx-debug.module>"]
+  "test": ["<CleanBRUH-arm64-apple-macosx-debug.exe>","<CleanBRUH-arm64-apple-macosx-debug.module>","<CleanBRUHPackageTests-arm64-apple-macosx-debug.test>","<CleanBRUHTests-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Tests/CleanBRUHTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH":
+    is-mutated: true
+commands:
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH-entitlement.plist":
+    tool: write-auxiliary-file
+    inputs: ["<entitlement-plist>","<com.apple.security.get-task-allow>"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH-entitlement.plist"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH-entitlement.plist"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/AppDelegate.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/Core/InputBlocker.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/LockOverlayView.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/MenuBarManager.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/OverlayWindowController.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/main.swift"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/sources"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/sources"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.product/Objects.LinkFileList"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.derived/runner.swift"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/sources"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.derived/runner.swift"]
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/runner.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/InfoPlistBundleConfigurationTests.swift.o"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.product/Objects.LinkFileList"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Tests/CleanBRUHTests/InfoPlistBundleConfigurationTests.swift"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/sources"]
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/sources"
+
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<CleanBRUH-arm64-apple-macosx-debug.exe>":
+    tool: phony
+    inputs: ["<CleanBRUH-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    outputs: ["<CleanBRUH-arm64-apple-macosx-debug.exe>"]
+
+  "<CleanBRUH-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUH.swiftmodule"]
+    outputs: ["<CleanBRUH-arm64-apple-macosx-debug.module>"]
+
+  "<CleanBRUHPackageTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/runner.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHPackageTests.swiftmodule"]
+    outputs: ["<CleanBRUHPackageTests-arm64-apple-macosx-debug.module>"]
+
+  "<CleanBRUHPackageTests-arm64-apple-macosx-debug.test>":
+    tool: phony
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.xctest/Contents/MacOS/CleanBRUHPackageTests"]
+    outputs: ["<CleanBRUHPackageTests-arm64-apple-macosx-debug.test>"]
+
+  "<CleanBRUHTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/InfoPlistBundleConfigurationTests.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHTests.swiftmodule"]
+    outputs: ["<CleanBRUHTests-arm64-apple-macosx-debug.module>"]
+
+  "C.CleanBRUH-arm64-apple-macosx-debug.exe":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.product/Objects.LinkFileList"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/CleanBRUH"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug","-o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH","-module-name","CleanBRUH","-Xlinker","-no_warn_duplicate_libraries","-emit-executable","-Xlinker","-alias","-Xlinker","_CleanBRUH_main","-Xlinker","_main","-Xlinker","-rpath","-Xlinker","@loader_path","@/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx13.0","-Xlinker","-add_ast_path","-Xlinker","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUH.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.CleanBRUH-arm64-apple-macosx-debug.exe-entitlements":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH-entitlement.plist"]
+    outputs: ["<CleanBRUH-arm64-apple-macosx-debug.exe-CodeSigning>"]
+    description: "Applying debug entitlements to ./.build/arm64-apple-macosx/debug/CleanBRUH"
+    args: ["codesign","--force","--sign","-","--entitlements","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH-entitlement.plist","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH"]
+
+  "C.CleanBRUH-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/AppDelegate.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/Core/InputBlocker.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/LockOverlayView.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/MenuBarManager.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/UI/OverlayWindowController.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/main.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/sources"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUH.swiftmodule"]
+    description: "Compiling Swift Module 'CleanBRUH' (6 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","CleanBRUH","-emit-dependencies","-emit-module","-emit-module-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUH.swiftmodule","-output-file-map","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/output-file-map.json","-incremental","-c","@/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/sources","-I","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j15","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","CleanBRUH_main","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","cleanbruh"]
+
+  "C.CleanBRUHPackageTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.derived/runner.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHTests.swiftmodule","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/sources"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/runner.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'CleanBRUHPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","CleanBRUHPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHPackageTests.swiftmodule","-output-file-map","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/sources","-I","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx13.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j15","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/include/CleanBRUHPackageTests-Swift.h","-color-diagnostics","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","cleanbruh"]
+
+  "C.CleanBRUHPackageTests-arm64-apple-macosx-debug.test":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/AppDelegate.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/InputBlocker.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/LockOverlayView.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/MenuBarManager.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/OverlayWindowController.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH.build/main.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.build/runner.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/InfoPlistBundleConfigurationTests.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.xctest/Contents/MacOS/CleanBRUHPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.xctest/Contents/MacOS/CleanBRUHPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug","-o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.xctest/Contents/MacOS/CleanBRUHPackageTests","-module-name","CleanBRUHPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx14.0","-Xlinker","-add_ast_path","-Xlinker","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUH.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.CleanBRUHTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Tests/CleanBRUHTests/InfoPlistBundleConfigurationTests.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUH","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/sources"]
+    outputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/InfoPlistBundleConfigurationTests.swift.o","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHTests.swiftmodule"]
+    description: "Compiling Swift Module 'CleanBRUHTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","CleanBRUHTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules/CleanBRUHTests.swiftmodule","-output-file-map","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/CleanBRUHTests.build/sources","-I","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx14.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j15","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-color-diagnostics","-swift-version","5","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","cleanbruh"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Sources/CleanBRUH/","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Tests/CleanBRUHTests/","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Package.swift","/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

@@ -1,0 +1,13 @@
+{
+  "": {
+    "dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/CleanBRUHPackageTests.d",
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/CleanBRUHPackageTests.o",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/primary.swiftdeps"
+  },
+  "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.derived/runner.swift": {
+    "object": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/djokobeatz/CODE/Apps Byself/CleanBRUH/.build/arm64-apple-macosx/release/CleanBRUHPackageTests.build/runner.dia"
+  }
+}
