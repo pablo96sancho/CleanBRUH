@@ -1,73 +1,54 @@
 # 🧹 CleanBRUH
 
-CleanBRUH es una utilidad nativa de macOS que bloquea temporalmente el
-teclado, el trackpad y el ratón desde la barra de menú, para poder limpiar
-el equipo físicamente sin pulsar teclas o hacer clics por accidente.
+Mantén tu Mac protegido mientras limpias, reparas o trabajas sin que el teclado, el ratón o el trackpad te interrumpan.
 
-## Requisitos
+<p align="center">
+  <img src="cover.jpg" alt="CleanBRUH" width="900" />
+</p>
 
-- macOS 13 (Ventura) o superior
-- Xcode Command Line Tools (`xcode-select --install`)
+[Download DMG](CleanBRUH-Installer.dmg)
 
-## Instalación y permisos de Accesibilidad
+## 🚀 Características
 
-CleanBRUH usa un *Event Tap* de CoreGraphics para interceptar la entrada del
-sistema, lo que requiere permiso de **Accesibilidad**:
+- 🧼 Bloquea teclado, ratón y trackpad al instante
+- ⏱️ Desbloqueo rápido manteniendo pulsada la barra espaciadora
+- 🖥️ Funciona desde la barra de menú de macOS
+- 🔒 Requiere permisos de Accesibilidad para interceptar la entrada del sistema
+- 📦 Empaquetado listo para instalar desde un archivo `.dmg`
 
-1. Abre la app (o ejecuta `./build_and_run.sh`).
-2. Ve al menú de la barra de estado → **"Comprobar Permisos de Accesibilidad"**.
-3. macOS abrirá **Ajustes del Sistema → Privacidad y seguridad → Accesibilidad**.
-4. Activa el interruptor junto a **CleanBRUH**.
-5. Si el sistema también solicita permiso de **Monitorización de entrada**
-   (Input Monitoring), concédelo igualmente en la misma sección de Ajustes.
+## 📸 Vista previa
 
-> ⚠️ Al usar una firma *ad-hoc* durante el desarrollo, macOS puede pedirte
-> que vuelvas a conceder el permiso tras cada recompilación (cambia el hash
-> del binario). Para distribución final, firma con un Developer ID de Apple
-> para que el permiso persista entre versiones.
+La app se ejecuta desde la barra de menú y activa una sobreimpresión oscura en todas las pantallas para dejar claro que el sistema está temporalmente bloqueado.
 
-## Uso
+## 📦 Instalación
 
-1. Haz clic en el icono ✨ de la barra de menú.
-2. Selecciona **"Iniciar Limpieza"**. Aparecerá una superposición oscura en
-   todas las pantallas conectadas y el teclado/trackpad/ratón dejarán de
-   responder.
-3. Para desbloquear, **mantén pulsada la barra ESPACIADORA durante 3
-   segundos** (verás la barra de progreso). También puedes forzar la salida
-   desde **"Salir"** en el menú si vuelves a tener control del ratón.
+1. Descarga el archivo [CleanBRUH-Installer.dmg](CleanBRUH-Installer.dmg)
+2. Abre el DMG y arrastra `CleanBRUH.app` a la carpeta `Aplicaciones`
+3. Ejecuta la app y concede los permisos de Accesibilidad que macOS te pida
+4. Pulsa **Iniciar Limpieza** desde la barra de menú
 
-## Compilar y ejecutar en local
+## 🔒 Permisos
 
-```bash
-chmod +x build_and_run.sh scripts/bundle_app.sh
-./build_and_run.sh
-```
+CleanBRUH usa un event tap de macOS para bloquear la entrada del sistema. Por eso necesita acceso a **Accesibilidad**.
 
-Esto compila con `swift build`, empaqueta el binario como
-`.build/debug/CleanBRUH.app` y lo lanza.
+Si macOS no lo permite, ve a:
 
-## Crear el instalador `.dmg`
+Ajustes del Sistema → Privacidad y seguridad → Accesibilidad
 
-```bash
-chmod +x create_dmg.sh scripts/bundle_app.sh
-./create_dmg.sh
-```
+y activa CleanBRUH.
 
-Esto compila en modo `release`, genera `.build/release/CleanBRUH.app` y
-produce `CleanBRUH-Installer.dmg` en la raíz del proyecto, listo para
-distribuir (con un enlace simbólico a `/Applications` incluido).
+## 🛠️ Requisitos
 
-## Estructura del proyecto
+- macOS 13 o superior
+- Permisos de Accesibilidad habilitados
 
-- `Core/InputBlocker.swift` — Event Tap de CoreGraphics, permisos y lógica
-  de desbloqueo por pulsación mantenida.
-- `UI/LockOverlayView.swift` — Vista SwiftUI de la superposición.
-- `UI/OverlayWindowController.swift` — Crea una `NSWindow` por pantalla.
-- `UI/MenuBarManager.swift` — Icono y menú de la barra de estado.
+## 🧪 Cómo funciona
 
-## Aviso
+- Abre la app desde la barra de menú
+- Pulsa **Iniciar Limpieza**
+- La entrada del sistema queda bloqueada
+- Para salir, mantén pulsada la barra espaciadora durante 3 segundos
 
-CleanBRUH intercepta y descarta eventos de entrada a nivel de sistema
-mientras el Modo Limpieza está activo. Al ser software de terceros con este
-nivel de acceso, revisa el código antes de conceder permisos de
-Accesibilidad, especialmente si distribuyes binarios compilados por otros.
+## About
+
+CleanBRUH está pensado para limpiar físicamente tu equipo sin tener que preocuparte de que el teclado o el ratón te interrumpan en mitad del proceso.
