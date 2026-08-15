@@ -2,9 +2,10 @@ import Cocoa
 import Combine
 import ApplicationServices
 
-/// Captura y descarta los eventos de teclado, trackpad y ratón del sistema
-/// mientras el "Modo Limpieza" está activo, usando un Event Tap de
-/// CoreGraphics a nivel de sesión (`.cgSessionEventTap`).
+/// Captura y descarta los eventos de teclado, trackpad, ratón y hardware
+/// del sistema mientras el "Modo Limpieza" está activo, usando un Event Tap
+/// de CoreGraphics a nivel HID (`.cgHIDEventTap`) para cubrir también las
+/// teclas de función, brillo y multimedia que llegan como `NX_SYSDEFINED`.
 ///
 /// También detecta, dentro del propio tap, el gesto de mantener pulsada
 /// la BARRA ESPACIADORA durante `holdDuration` segundos para desbloquear.
@@ -40,21 +41,35 @@ final class InputBlocker: ObservableObject {
     private var holdStartTime: CFAbsoluteTime?
     private var progressTimer: Timer?
 
-    private let eventMask: CGEventMask =
-        (1 << CGEventType.keyDown.rawValue) |
-        (1 << CGEventType.keyUp.rawValue) |
-        (1 << CGEventType.flagsChanged.rawValue) |
-        (1 << CGEventType.mouseMoved.rawValue) |
-        (1 << CGEventType.leftMouseDown.rawValue) |
-        (1 << CGEventType.leftMouseUp.rawValue) |
-        (1 << CGEventType.leftMouseDragged.rawValue) |
-        (1 << CGEventType.rightMouseDown.rawValue) |
-        (1 << CGEventType.rightMouseUp.rawValue) |
-        (1 << CGEventType.rightMouseDragged.rawValue) |
-        (1 << CGEventType.otherMouseDown.rawValue) |
-        (1 << CGEventType.otherMouseUp.rawValue) |
-        (1 << CGEventType.otherMouseDragged.rawValue) |
-        (1 << CGEventType.scrollWheel.rawValue)
+    /// Los eventos de hardware del sistema usan el tipo `NX_SYSDEFINED` (rawValue 14),
+    /// y ahí llegan también las teclas de función y los atajos multimedia del sistema.
+    /// Este bit es necesario incluso con un tap HID porque esos eventos no siempre
+    /// se entregan como `keyDown` ni `flagsChanged` normales.
+    static let systemDefinedEventTypeRawValue: UInt32 = 14
+
+    static let eventMask: CGEventMask = {
+        let eventTypeValues: [UInt32] = [
+            CGEventType.keyDown.rawValue,
+            CGEventType.keyUp.rawValue,
+            CGEventType.flagsChanged.rawValue,
+            systemDefinedEventTypeRawValue,
+            CGEventType.mouseMoved.rawValue,
+            CGEventType.leftMouseDown.rawValue,
+            CGEventType.leftMouseUp.rawValue,
+            CGEventType.leftMouseDragged.rawValue,
+            CGEventType.rightMouseDown.rawValue,
+            CGEventType.rightMouseUp.rawValue,
+            CGEventType.rightMouseDragged.rawValue,
+            CGEventType.otherMouseDown.rawValue,
+            CGEventType.otherMouseUp.rawValue,
+            CGEventType.otherMouseDragged.rawValue,
+            CGEventType.scrollWheel.rawValue
+        ]
+
+        return eventTypeValues.reduce(CGEventMask(0)) { mask, eventTypeValue in
+            mask | CGEventMask(1 << eventTypeValue)
+        }
+    }()
 
     // MARK: - Permisos de Accesibilidad
 
@@ -97,10 +112,10 @@ final class InputBlocker: ObservableObject {
         let selfPointer = Unmanaged.passUnretained(self).toOpaque()
 
         guard let tap = CGEvent.tapCreate(
-            tap: .cgSessionEventTap,
+            tap: .cghidEventTap,
             place: .headInsertEventTap,
             options: .defaultTap,
-            eventsOfInterest: eventMask,
+            eventsOfInterest: Self.eventMask,
             callback: eventTapCallback,
             userInfo: selfPointer
         ) else {
@@ -186,6 +201,10 @@ final class InputBlocker: ObservableObject {
             if let tap = eventTap {
                 CGEvent.tapEnable(tap: tap, enable: true)
             }
+            return nil
+        }
+
+        if type.rawValue == Self.systemDefinedEventTypeRawValue {
             return nil
         }
 
