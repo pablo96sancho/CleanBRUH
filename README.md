@@ -1,48 +1,67 @@
 # 🧹 CleanBRUH
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/pablo96sancho/CleanBRUH/main/github/cover.jpg" alt="CleanBRUH" width="128" />
-</p>
+> Limpia tu Mac sin activar teclas, clics ni gestos por accidente.
 
-<p align="center">
-  <strong>Bloquea temporalmente teclado, ratón y trackpad para limpiar tu Mac sin interrupciones.</strong>
-</p>
+CleanBRUH es una aplicación ligera para la barra de menú de macOS que bloquea temporalmente el teclado, el ratón y el trackpad mientras limpias, reparas o trabajas sobre el equipo.
 
-<p align="center">
-  <a href="https://github.com/pablo96sancho/CleanBRUH/releases/latest"><img src="https://img.shields.io/github/v/release/pablo96sancho/CleanBRUH?label=Descargar%20para%20macOS&style=for-the-badge" alt="Descargar para macOS"></a>
-  <img src="https://img.shields.io/badge/macOS-13%2B-000000?style=for-the-badge&logo=apple" alt="macOS 13 o superior">
-</p>
+[![Download DMG](https://img.shields.io/github/v/release/pablo96sancho/CleanBRUH?label=Descargar%20DMG&color=007AFF&logo=apple)](https://github.com/pablo96sancho/CleanBRUH/releases/latest)
 
-<p align="center">
-  <a href="https://github.com/pablo96sancho/CleanBRUH/releases/latest"><strong>Descargar CleanBRUH v1.1</strong></a>
-</p>
+---
 
-<img src="https://raw.githubusercontent.com/pablo96sancho/CleanBRUH/main/cover.jpg" alt="Vista previa de CleanBRUH" width="100%">
+## 🚀 Características
 
-## Instalación
+- 🧹 Activación rápida desde la barra de menú
+- ⌨️ Bloquea teclado, ratón y trackpad al instante
+- ⏱️ Desbloqueo manteniendo pulsada la barra espaciadora durante 3 segundos
+- 💻 Diseño nativo, ligero y centrado en macOS
+- 🔒 Bloqueo de atajos y controles hardware mientras está activo
 
-1. Ve a [Releases](https://github.com/pablo96sancho/CleanBRUH/releases/latest) y descarga únicamente `CleanBRUH-Installer.dmg`.
-2. Abre el DMG y arrastra `CleanBRUH.app` a `Applications`.
-3. Abre la app y concede el permiso de **Accesibilidad** cuando macOS lo solicite.
+---
 
-> No descargues el ZIP de la pestaña **Code**: contiene el código fuente. El DMG de la release es el instalador de la aplicación.
+## 📸 Vista previa
 
-## Características
+![CleanBRUH Preview](cover.jpg)
 
-- Acceso rápido desde la barra de menú.
-- Bloqueo de teclado, ratón y trackpad.
-- Desbloqueo manteniendo pulsada la barra espaciadora.
-- App nativa y ligera para macOS.
+---
 
-## Requisitos
+## 📦 Instalación
 
-- macOS 13 o posterior.
-- Permiso de Accesibilidad: **Ajustes del Sistema → Privacidad y seguridad → Accesibilidad → CleanBRUH**.
+1. Descarga la última versión desde [GitHub Releases](https://github.com/pablo96sancho/CleanBRUH/releases/latest).
+2. Abre el archivo `CleanBRUH-Installer.dmg`.
+3. Arrastra **CleanBRUH.app** a la carpeta **Aplicaciones**.
+4. Ejecuta la app desde la barra de menú.
 
-## Desarrollo
+---
+
+## 🔒 Permisos
+
+CleanBRUH usa un `event tap` de macOS para bloquear la entrada del sistema, por lo que requiere permiso de **Accesibilidad**.
+
+Puedes concederlo en:
+
+**Ajustes del Sistema → Privacidad y seguridad → Accesibilidad**
+
+---
+
+## 🛠️ Desarrollo
+
+### Requisitos
+
+- macOS 13 o superior
+- Xcode 15+ o Xcode Command Line Tools (`xcode-select --install`)
+- Swift 5.9+
+
+### Compilar y ejecutar
 
 ```bash
-bash create_dmg.sh
+chmod +x build_and_run.sh
+./build_and_run.sh
 ```
 
-El comando genera `CleanBRUH-Installer.dmg` localmente. Ese archivo no se versiona: cada release de GitHub publica el DMG como descarga independiente.
+Para generar el instalador:
+
+```bash
+./create_dmg.sh
+```
+
+Esto crea `CleanBRUH-Installer.dmg` localmente. En GitHub, el instalador se publica como archivo adjunto de cada Release.
