@@ -2,6 +2,7 @@
 .swiftpm/
 *.dmg
 .DS_Store
+github/*.dmg
 xcuserdata/
 *.xcodeproj
 DerivedData/

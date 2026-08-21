@@ -1,0 +1,35 @@
+name: Publicar release de macOS
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Crear DMG y publicarlo
+    runs-on: macos-14
+
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Crear instalador
+        run: bash create_dmg.sh
+
+      - name: Publicar el DMG
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" CleanBRUH-Installer.dmg --clobber
+          else
+            gh release create "$TAG" CleanBRUH-Installer.dmg \
+              --title "CleanBRUH $TAG" \
+              --notes "Instalador de CleanBRUH para macOS. Descarga el DMG y arrastra la app a Applications."
+          fi

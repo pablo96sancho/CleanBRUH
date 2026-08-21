@@ -13,7 +13,6 @@ final class InputBlocker: ObservableObject {
 
     enum UnlockMethod {
         case holdSpace
-        case commandEscape
     }
 
     // MARK: - Estado publicado (para la UI)
@@ -41,35 +40,17 @@ final class InputBlocker: ObservableObject {
     private var holdStartTime: CFAbsoluteTime?
     private var progressTimer: Timer?
 
-    /// Los eventos de hardware del sistema usan el tipo `NX_SYSDEFINED` (rawValue 14),
-    /// y ahí llegan también las teclas de función y los atajos multimedia del sistema.
-    /// Este bit es necesario incluso con un tap HID porque esos eventos no siempre
-    /// se entregan como `keyDown` ni `flagsChanged` normales.
+    /// Capturamos todos los eventos del sistema para garantizar que no pase ni
+    /// teclado estándar ni eventos del ratón, ni tampoco los `NX_SYSDEFINED`
+    /// (funciones, brillo, volumen, etc.) mientras el bloqueo está activo.
     static let systemDefinedEventTypeRawValue: UInt32 = 14
 
-    static let eventMask: CGEventMask = {
-        let eventTypeValues: [UInt32] = [
-            CGEventType.keyDown.rawValue,
-            CGEventType.keyUp.rawValue,
-            CGEventType.flagsChanged.rawValue,
-            systemDefinedEventTypeRawValue,
-            CGEventType.mouseMoved.rawValue,
-            CGEventType.leftMouseDown.rawValue,
-            CGEventType.leftMouseUp.rawValue,
-            CGEventType.leftMouseDragged.rawValue,
-            CGEventType.rightMouseDown.rawValue,
-            CGEventType.rightMouseUp.rawValue,
-            CGEventType.rightMouseDragged.rawValue,
-            CGEventType.otherMouseDown.rawValue,
-            CGEventType.otherMouseUp.rawValue,
-            CGEventType.otherMouseDragged.rawValue,
-            CGEventType.scrollWheel.rawValue
-        ]
-
-        return eventTypeValues.reduce(CGEventMask(0)) { mask, eventTypeValue in
-            mask | CGEventMask(1 << eventTypeValue)
-        }
-    }()
+    /// En CoreGraphics, la máscara “todos los eventos” es el equivalente a
+    /// `~(CGEventMask)0`, que cubre no solo teclado y ratón, sino también
+    /// gestos del trackpad (pinch, swipe, rotate, tres dedos, etc.) y eventos
+    /// del sistema. En Swift no existe la macro C del SDK, así que la
+    /// construimos directamente en el tipo nativo.
+    static let eventMask: CGEventMask = CGEventMask(UInt64.max)
 
     // MARK: - Permisos de Accesibilidad
 
@@ -213,15 +194,6 @@ final class InputBlocker: ObservableObject {
 
             if unlockMethod == .holdSpace && keyCode == unlockKeyCode {
                 type == .keyDown ? handleUnlockKeyDown() : handleUnlockKeyUp()
-            }
-
-            if unlockMethod == .commandEscape && type == .keyDown {
-                let flags = event.flags
-                let isCommandEscape = flags.contains(.maskCommand) && keyCode == 53
-                if isCommandEscape {
-                    resetHoldState()
-                    onUnlockRequested?()
-                }
             }
         }
 

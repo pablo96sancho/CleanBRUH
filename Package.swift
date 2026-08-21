@@ -9,7 +9,8 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "CleanBRUH",
-            path: "Sources/CleanBRUH"
+            path: "Sources/CleanBRUH",
+            exclude: ["Resources"]
         ),
         .testTarget(
             name: "CleanBRUHTests",
