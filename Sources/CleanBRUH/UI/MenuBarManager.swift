@@ -7,9 +7,7 @@ final class MenuBarManager: NSObject {
     private let overlayController: OverlayWindowController
 
     private let startCleaningItem = NSMenuItem()
-    private let unlockMethodItem = NSMenuItem()
     private let holdSpaceUnlockItem = NSMenuItem()
-    private let commandEscapeUnlockItem = NSMenuItem()
 
     init(inputBlocker: InputBlocker, overlayController: OverlayWindowController) {
         self.inputBlocker = inputBlocker
@@ -43,22 +41,9 @@ final class MenuBarManager: NSObject {
 
         menu.addItem(.separator())
 
-        let unlockMethodsMenu = NSMenu()
-        unlockMethodItem.title = "Método de desbloqueo"
-        unlockMethodItem.submenu = unlockMethodsMenu
-        menu.addItem(unlockMethodItem)
-
-        holdSpaceUnlockItem.title = "Mantener barra espaciadora (3 s)"
-        holdSpaceUnlockItem.target = self
-        holdSpaceUnlockItem.action = #selector(selectHoldSpaceUnlockMethod)
-        unlockMethodsMenu.addItem(holdSpaceUnlockItem)
-
-        commandEscapeUnlockItem.title = "⌘ + Esc"
-        commandEscapeUnlockItem.target = self
-        commandEscapeUnlockItem.action = #selector(selectCommandEscapeUnlockMethod)
-        unlockMethodsMenu.addItem(commandEscapeUnlockItem)
-
-        updateUnlockMethodMenuState()
+        holdSpaceUnlockItem.title = "Desbloqueo: mantener barra espaciadora (3 s)"
+        holdSpaceUnlockItem.isEnabled = false
+        menu.addItem(holdSpaceUnlockItem)
 
         menu.addItem(.separator())
 
@@ -85,18 +70,11 @@ final class MenuBarManager: NSObject {
     }
 
     private func updateUnlockMethodMenuState() {
-        let isHoldSpace = inputBlocker.unlockMethod == .holdSpace
-        holdSpaceUnlockItem.state = isHoldSpace ? .on : .off
-        commandEscapeUnlockItem.state = !isHoldSpace ? .on : .off
+        holdSpaceUnlockItem.state = .on
     }
 
     @objc private func selectHoldSpaceUnlockMethod() {
         inputBlocker.unlockMethod = .holdSpace
-        updateUnlockMethodMenuState()
-    }
-
-    @objc private func selectCommandEscapeUnlockMethod() {
-        inputBlocker.unlockMethod = .commandEscape
         updateUnlockMethodMenuState()
     }
 
