@@ -25,10 +25,19 @@ final class MenuBarManager: NSObject {
     }
 
     private func configureStatusItem() {
-        statusItem.button?.image = NSImage(
-            systemSymbolName: "sparkles",
-            accessibilityDescription: "CleanBRUH"
-        )
+        // Icono template (escoba + destellos); se adapta solo a modo claro/oscuro.
+        if let url = Bundle.main.url(forResource: "MenuBarIcon", withExtension: "svg"),
+           let icon = NSImage(contentsOf: url) {
+            icon.size = NSSize(width: 18, height: 18)
+            icon.isTemplate = true
+            icon.accessibilityDescription = "CleanBRUH"
+            statusItem.button?.image = icon
+        } else {
+            statusItem.button?.image = NSImage(
+                systemSymbolName: "sparkles",
+                accessibilityDescription: "CleanBRUH"
+            )
+        }
     }
 
     private func configureMenu() {

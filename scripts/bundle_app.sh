@@ -28,6 +28,10 @@ if [ -f "$ROOT_DIR/Sources/CleanBRUH/Resources/AppIcon.icns" ]; then
     cp "$ROOT_DIR/Sources/CleanBRUH/Resources/AppIcon.icns" "$APP_BUNDLE/Contents/Resources/AppIcon.icns"
 fi
 
+if [ -f "$ROOT_DIR/Sources/CleanBRUH/Resources/MenuBarIcon.svg" ]; then
+    cp "$ROOT_DIR/Sources/CleanBRUH/Resources/MenuBarIcon.svg" "$APP_BUNDLE/Contents/Resources/MenuBarIcon.svg"
+fi
+
 # Firma ad-hoc: hace que TCC (permisos de Accesibilidad) reconozca el
 # bundle de forma consistente entre ejecuciones.
 codesign --force --deep --sign - "$APP_BUNDLE"
